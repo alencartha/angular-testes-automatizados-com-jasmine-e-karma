@@ -26,13 +26,13 @@ describe(LikeWidgetComponent.name, () => {
     })
 
 
-    it(`Gerar ids unicos quando o Id não é passado como parâmetro`, () => {
+    it(`Gerar ids unicos quando o (@Input Id) não é passado como parâmetro, durante o ngInit`, () => {
         fixture.detectChanges()
         expect(component.id).toBeTruthy()
     })
 
 
-    it(`Não gerar ids unicos quando o Id  é passado como parâmetro`, () => {
+    it(`Não gerar ids unicos quando o (@Input Id) é passado como parâmetro no ngOnInit`, () => {
         const someId = 'algumId'
         component.id = someId
         fixture.detectChanges()
@@ -40,7 +40,7 @@ describe(LikeWidgetComponent.name, () => {
     })
 
     it(`#${LikeWidgetComponent.prototype.like.name}
-    emitir um evento de like`, done => {
+    emitir um evento (@Output liked) for invocado`, done => {
 
         fixture.detectChanges()
         component.liked.subscribe(()=>{
@@ -51,7 +51,7 @@ describe(LikeWidgetComponent.name, () => {
     })
 
     it(`#${LikeWidgetComponent.prototype.like.name}
-    emitir um evento de like de com SPY`, () => {
+    emitir um evento (@Output liked) for invocado (SPY)`, () => {
 
         //parametro o output e o método emit
         spyOn(component.liked, 'emit')
@@ -61,7 +61,7 @@ describe(LikeWidgetComponent.name, () => {
 
     })
 
-    
+
 })
 
 
