@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<testsuite name="Firefox 95.0 (Windows 10)" package="" timestamp="2022-01-05T21:07:32" id="0" hostname="LAPTOP-BEPDCTDT" tests="9" errors="0" failures="0" time="0.195">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0"/>
+  </properties>
+  <testcase name="UniqueIdService #getNumberOfGenerateUniqueIds &#xA;    saber o retorno de ids gerados quando chamada a função" time="0.062" classname="Firefox_95_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generateUniqueIdWithPrefix &#xA;    o valor do argumento não pode ser vazio, gerar mensagem de erro" time="0" classname="Firefox_95_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generateUniqueIdWithPrefix &#xA;    deve gerar um id unico quando for chamado com um prefixo" time="0.001" classname="Firefox_95_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generateUniqueIdWithPrefix &#xA;    não deve gerar ids duplicados quando for chamado multiplas vezes" time="0.004" classname="Firefox_95_0_(Windows_10).UniqueIdService"/>
+  <testcase name="LikeWidgetComponent Quando o componente é criado" time="0.055" classname="Firefox_95_0_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent Gerar ids unicos quando o (@Input Id) não é passado como parâmetro, durante o ngInit" time="0.026" classname="Firefox_95_0_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent Não gerar ids unicos quando o (@Input Id) é passado como parâmetro no ngOnInit" time="0.018" classname="Firefox_95_0_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent #like&#xA;    emitir um evento (@Output liked) for invocado" time="0.017" classname="Firefox_95_0_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent #like&#xA;    emitir um evento (@Output liked) for invocado (SPY)" time="0.012" classname="Firefox_95_0_(Windows_10).LikeWidgetComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
