@@ -58,7 +58,7 @@ describe(UniqueIdService.name, () => {
     it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} 
     o valor do argumento não pode ser vazio, gerar mensagem de erro`, () => {
 
-        const emptyValues = [null, undefined, '', 'app']
+        const emptyValues = [null, undefined, '']
 
         emptyValues.forEach(emptyValue=>{
             expect(()=> service.generateUniqueIdWithPrefix(emptyValue))

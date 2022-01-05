@@ -2,17 +2,17 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { LikeWidgetComponent } from "./like-widget.component";
 import { LikeWidgetModule } from "./like-widget.module";
 
-describe(LikeWidgetComponent.name, ()=>{
+describe(LikeWidgetComponent.name, () => {
 
     let fixture: ComponentFixture<LikeWidgetComponent> = null
-    let component:LikeWidgetComponent = null
+    let component: LikeWidgetComponent = null
 
-    beforeEach(async ()=>{
+    beforeEach(async () => {
 
         //Testbed declara o módulo que eu vou testar, com todos os seus serviços
         //é assíncrono espera a promessa ser resolvida, aguarda o componente ser compilado para o teste continuar
         await TestBed.configureTestingModule({
-            imports:[LikeWidgetModule]
+            imports: [LikeWidgetModule]
         }).compileComponents()
 
         fixture = TestBed.createComponent(LikeWidgetComponent)
@@ -21,24 +21,47 @@ describe(LikeWidgetComponent.name, ()=>{
     })
 
 
-    it(`Quando o componente é criado`, ()=>{
+    it(`Quando o componente é criado`, () => {
         expect(component).toBeTruthy()
     })
 
 
-    it(`Gerar ids unicos quando o Id não é passado como parâmetro`, ()=>{
+    it(`Gerar ids unicos quando o Id não é passado como parâmetro`, () => {
         fixture.detectChanges()
         expect(component.id).toBeTruthy()
     })
 
-    
-    it(`Não gerar ids unicos quando o Id  é passado como parâmetro`, ()=>{
+
+    it(`Não gerar ids unicos quando o Id  é passado como parâmetro`, () => {
         const someId = 'algumId'
         component.id = someId
         fixture.detectChanges()
         expect(component.id).toBe(someId)
     })
 
+    it(`#${LikeWidgetComponent.prototype.like.name}
+    emitir um evento de like`, done => {
+
+        fixture.detectChanges()
+        component.liked.subscribe(()=>{
+            expect(true).toBeTrue()
+            done()
+        })
+        component.like()
+    })
+
+    it(`#${LikeWidgetComponent.prototype.like.name}
+    emitir um evento de like de com SPY`, () => {
+
+        //parametro o output e o método emit
+        spyOn(component.liked, 'emit')
+        fixture.detectChanges() 
+        component.like()
+        expect(component.liked.emit).toHaveBeenCalled()
+
+    })
+
+    
 })
-  
+
 
